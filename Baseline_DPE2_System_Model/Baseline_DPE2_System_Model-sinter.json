@@ -1,0 +1,923 @@
+{
+  "title": "Baseline_DPE2_System_Model",
+  "config-version": "1.4",
+  "description": "This is the SimSinter file for the DPE Aspen Plus file.",
+  "model": {
+    "file": "Baseline_DPE2_System_Model.bkp",
+    "DigestValue": "9e4f67955618919dfa2c924db9e62b9c21f00a1d",
+    "SignatureMethodAlgorithm": "sha1"
+  },
+  "input-files": [],
+  "author": "Byron Soepyan",
+  "date": "8/3/2018",
+  "filetype": "sinterconfig",
+  "filetype-version": 0.3,
+  "application": {
+    "name": "Aspen Plus",
+    "version": "30.0",
+    "constraint": "AT-LEAST"
+  },
+  "inputs": {
+    "WTCOAL_FR": {
+      "path": [
+        "\\Data\\Streams\\WTCOAL\\Input\\FLOW\\NCPSD\\RAWCOAL"
+      ],
+      "type": "double",
+      "default": 399058.9,
+      "description": "Wet coal feed flow rate",
+      "units": "lb/hr",
+      "min": 350000.0,
+      "max": 450000.0
+    },
+    "Dried coal moisture content": {
+      "path": [
+        "\\Data\\Blocks\\COALDRYR\\Input\\ELEM\\NCPSD\\DRYCOAL\\PROXANAL\\#0"
+      ],
+      "type": "double",
+      "default": 5.0,
+      "description": "Dried coal moisture content",
+      "units": "wt %",
+      "min": 3.0,
+      "max": 7.0
+    },
+    "CO2SPL_FR": {
+      "path": [
+        "\\Data\\Blocks\\CO2SPL\\Input\\BASIS_FLOW\\CO2REC1A"
+      ],
+      "type": "double",
+      "default": 0.1,
+      "description": "CO2 recycle to combustor (non-transport) flow rate",
+      "units": "lb/hr",
+      "min": 0.05,
+      "max": 0.15
+    },
+    "SETPARAM_Combustor_P": {
+      "path": [
+        "\\Data\\Flowsheeting Options\\Calculator\\SETPARAM\\Input\\FVN_INIT_VAL\\COMBPRES"
+      ],
+      "type": "double",
+      "default": 203.0535,
+      "description": "Combustor pressure",
+      "units": "psia",
+      "min": 150.0,
+      "max": 250.0
+    },
+    "COMBCHNL_TEMP": {
+      "path": [
+        "\\Data\\Blocks\\COMBCHNL\\Input\\TEMP"
+      ],
+      "type": "double",
+      "default": 4317.134,
+      "description": "Reactor outlet temperature.",
+      "units": "degF"
+    },
+    "COMBCHNL_PRES": {
+      "path": [
+        "\\Data\\Blocks\\COMBCHNL\\Input\\PRES"
+      ],
+      "type": "double",
+      "default": 14.696,
+      "description": "Reactor outlet pressure or pressure drop. Absolute units: value > 0 - outlet\npressure; value <= 0 - Pressure drop. Gauge units: outlet pressure.",
+      "units": "psia"
+    },
+    "COMBCHNL_CO2": {
+      "path": [
+        "\\Data\\Blocks\\COMBCHNL\\Input\\MOLE_YIELD\\(#0,#0)"
+      ],
+      "type": "double",
+      "default": 0.600356827,
+      "description": "Yield per unit mass of total feed of components that are not listed as Inerts.",
+      "units": null
+    },
+    "COMBCHNL_CO": {
+      "path": [
+        "\\Data\\Blocks\\COMBCHNL\\Input\\MOLE_YIELD\\(#0,#1)"
+      ],
+      "type": "double",
+      "default": 0.094083008,
+      "description": "Yield per unit mass of total feed of components that are not listed as Inerts.",
+      "units": null
+    },
+    "COMBCHNL_H2O": {
+      "path": [
+        "\\Data\\Blocks\\COMBCHNL\\Input\\MOLE_YIELD\\(#0,#2)"
+      ],
+      "type": "double",
+      "default": 0.176640902,
+      "description": "Yield per unit mass of total feed of components that are not listed as Inerts.",
+      "units": null
+    },
+    "COMBCHNL_H2": {
+      "path": [
+        "\\Data\\Blocks\\COMBCHNL\\Input\\MOLE_YIELD\\(#0,#3)"
+      ],
+      "type": "double",
+      "default": 0.001404797,
+      "description": "Yield per unit mass of total feed of components that are not listed as Inerts.",
+      "units": null
+    },
+    "COMBCHNL_N2": {
+      "path": [
+        "\\Data\\Blocks\\COMBCHNL\\Input\\MOLE_YIELD\\(#0,#4)"
+      ],
+      "type": "double",
+      "default": 0.015026396,
+      "description": "Yield per unit mass of total feed of components that are not listed as Inerts.",
+      "units": null
+    },
+    "COMBCHNL_K": {
+      "path": [
+        "\\Data\\Blocks\\COMBCHNL\\Input\\MOLE_YIELD\\(#0,#5)"
+      ],
+      "type": "double",
+      "default": 0.004453695,
+      "description": "Yield per unit mass of total feed of components that are not listed as Inerts.",
+      "units": null
+    },
+    "COMBCHNL_O2": {
+      "path": [
+        "\\Data\\Blocks\\COMBCHNL\\Input\\MOLE_YIELD\\(#0,#6)"
+      ],
+      "type": "double",
+      "default": 0.061272534,
+      "description": "Yield per unit mass of total feed of components that are not listed as Inerts.",
+      "units": null
+    },
+    "COMBCHNL_AR": {
+      "path": [
+        "\\Data\\Blocks\\COMBCHNL\\Input\\MOLE_YIELD\\(#0,#7)"
+      ],
+      "type": "double",
+      "default": 0.022517917,
+      "description": "Yield per unit mass of total feed of components that are not listed as Inerts.",
+      "units": null
+    },
+    "COMBCHNL_NO": {
+      "path": [
+        "\\Data\\Blocks\\COMBCHNL\\Input\\MOLE_YIELD\\(#0,#8)"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "Yield per unit mass of total feed of components that are not listed as Inerts.",
+      "units": null
+    },
+    "COMBCHNL_SO2": {
+      "path": [
+        "\\Data\\Blocks\\COMBCHNL\\Input\\MOLE_YIELD\\(#0,#9)"
+      ],
+      "type": "double",
+      "default": 0.007300235,
+      "description": "Yield per unit mass of total feed of components that are not listed as Inerts.",
+      "units": null
+    },
+    "COMBCHNL_KOH": {
+      "path": [
+        "\\Data\\Blocks\\COMBCHNL\\Input\\MOLE_YIELD\\(#0,#10)"
+      ],
+      "type": "double",
+      "default": 0.011649287,
+      "description": "Yield per unit mass of total feed of components that are not listed as Inerts.",
+      "units": null
+    },
+    "COMBCHNL_SIO2": {
+      "path": [
+        "\\Data\\Blocks\\COMBCHNL\\Input\\MOLE_YIELD\\(#0,#11)"
+      ],
+      "type": "double",
+      "default": 0.001725255,
+      "description": "Yield per unit mass of total feed of components that are not listed as Inerts.",
+      "units": null
+    },
+    "COMBCHNL_AL2O3": {
+      "path": [
+        "\\Data\\Blocks\\COMBCHNL\\Input\\MOLE_YIELD\\(#0,#12)"
+      ],
+      "type": "double",
+      "default": 0.000711524,
+      "description": "Yield per unit mass of total feed of components that are not listed as Inerts.",
+      "units": null
+    },
+    "COMBCHNL_FE2O3": {
+      "path": [
+        "\\Data\\Blocks\\COMBCHNL\\Input\\MOLE_YIELD\\(#0,#13)"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "Yield per unit mass of total feed of components that are not listed as Inerts.",
+      "units": null
+    },
+    "COMBCHNL_CAO": {
+      "path": [
+        "\\Data\\Blocks\\COMBCHNL\\Input\\MOLE_YIELD\\(#0,#14)"
+      ],
+      "type": "double",
+      "default": 0.002606867,
+      "description": "Yield per unit mass of total feed of components that are not listed as Inerts.",
+      "units": null
+    },
+    "COMBCHNL_CA(OH)2": {
+      "path": [
+        "\\Data\\Blocks\\COMBCHNL\\Input\\MOLE_YIELD\\(#0,#15)"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "Yield per unit mass of total feed of components that are not listed as Inerts.",
+      "units": null
+    },
+    "COMBCHNL_FE": {
+      "path": [
+        "\\Data\\Blocks\\COMBCHNL\\Input\\MOLE_YIELD\\(#0,#16)"
+      ],
+      "type": "double",
+      "default": 7.66939E-05,
+      "description": "Yield per unit mass of total feed of components that are not listed as Inerts.",
+      "units": null
+    },
+    "COMBCHNL_FEO": {
+      "path": [
+        "\\Data\\Blocks\\COMBCHNL\\Input\\MOLE_YIELD\\(#0,#17)"
+      ],
+      "type": "double",
+      "default": 0.000148583,
+      "description": "Yield per unit mass of total feed of components that are not listed as Inerts.",
+      "units": null
+    },
+    "COMBCHNL_FE(OH)2": {
+      "path": [
+        "\\Data\\Blocks\\COMBCHNL\\Input\\MOLE_YIELD\\(#0,#18)"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "Yield per unit mass of total feed of components that are not listed as Inerts.",
+      "units": null
+    },
+    "COMBCHNL_AL(OH)3": {
+      "path": [
+        "\\Data\\Blocks\\COMBCHNL\\Input\\MOLE_YIELD\\(#0,#19)"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "Yield per unit mass of total feed of components that are not listed as Inerts.",
+      "units": null
+    },
+    "COMBCHNL_MGAL2O4": {
+      "path": [
+        "\\Data\\Blocks\\COMBCHNL\\Input\\MOLE_YIELD\\(#0,#20)"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "Yield per unit mass of total feed of components that are not listed as Inerts.",
+      "units": null
+    },
+    "COMBCHNL_CH4": {
+      "path": [
+        "\\Data\\Blocks\\COMBCHNL\\Input\\MOLE_YIELD\\(#0,#21)"
+      ],
+      "type": "double",
+      "default": 8.29E-16,
+      "description": "Yield per unit mass of total feed of components that are not listed as Inerts.",
+      "units": null
+    },
+    "COMBCHNL_MGO": {
+      "path": [
+        "\\Data\\Blocks\\COMBCHNL\\Input\\MOLE_YIELD\\(#0,#22)"
+      ],
+      "type": "double",
+      "default": 1.06547E-05,
+      "description": "Yield per unit mass of total feed of components that are not listed as Inerts.",
+      "units": null
+    },
+    "COMBCHNL_C": {
+      "path": [
+        "\\Data\\Blocks\\COMBCHNL\\Input\\MOLE_YIELD\\(#0,#23)"
+      ],
+      "type": "double",
+      "default": 1.51E-14,
+      "description": "Yield per unit mass of total feed of components that are not listed as Inerts.",
+      "units": null
+    },
+    "COMBCHNL_S": {
+      "path": [
+        "\\Data\\Blocks\\COMBCHNL\\Input\\MOLE_YIELD\\(#0,#24)"
+      ],
+      "type": "double",
+      "default": 1.36E-06,
+      "description": "Yield per unit mass of total feed of components that are not listed as Inerts.",
+      "units": null
+    },
+    "COMBCHNL_AL": {
+      "path": [
+        "\\Data\\Blocks\\COMBCHNL\\Input\\MOLE_YIELD\\(#0,#25)"
+      ],
+      "type": "double",
+      "default": 5.27E-09,
+      "description": "Yield per unit mass of total feed of components that are not listed as Inerts.",
+      "units": null
+    },
+    "COMBCHNL_CA": {
+      "path": [
+        "\\Data\\Blocks\\COMBCHNL\\Input\\MOLE_YIELD\\(#0,#26)"
+      ],
+      "type": "double",
+      "default": 8.3E-06,
+      "description": "Yield per unit mass of total feed of components that are not listed as Inerts.",
+      "units": null
+    },
+    "COMBCHNL_MG": {
+      "path": [
+        "\\Data\\Blocks\\COMBCHNL\\Input\\MOLE_YIELD\\(#0,#27)"
+      ],
+      "type": "double",
+      "default": 5.14774E-06,
+      "description": "Yield per unit mass of total feed of components that are not listed as Inerts.",
+      "units": null
+    },
+    "COMBCHNL_SI": {
+      "path": [
+        "\\Data\\Blocks\\COMBCHNL\\Input\\MOLE_YIELD\\(#0,#28)"
+      ],
+      "type": "double",
+      "default": 6.15E-11,
+      "description": "Yield per unit mass of total feed of components that are not listed as Inerts.",
+      "units": null
+    },
+    "COMBCHNL_K2CO3": {
+      "path": [
+        "\\Data\\Blocks\\COMBCHNL\\Input\\MOLE_YIELD\\(#0,#29)"
+      ],
+      "type": "double",
+      "default": 1.08E-08,
+      "description": "Yield per unit mass of total feed of components that are not listed as Inerts.",
+      "units": null
+    },
+    "VG2MHX1A_T": {
+      "path": [
+        "\\Data\\Blocks\\MHX1\\Input\\VALUE\\VG2MHX1A"
+      ],
+      "type": "double",
+      "default": 90.0,
+      "description": "Desired value for the specification.",
+      "units": null
+    },
+    "VG2MHX1A_P": {
+      "path": [
+        "\\Data\\Blocks\\MHX1\\Input\\PRES\\VG2MHX1A"
+      ],
+      "type": "double",
+      "default": -0.1,
+      "description": "Absolute units: If value > 0 - Outlet pressure; if value <= 0 - Pressure drop.\nGauge units: Value is outlet pressure.",
+      "units": "psia"
+    },
+    "VG2MHX1A_Tolerance": {
+      "path": [
+        "\\Data\\Blocks\\MHX1\\Input\\HTOL\\VG2MHX1A"
+      ],
+      "type": "double",
+      "default": 0.0001,
+      "description": "Flash convergence tolerance.",
+      "units": null
+    },
+    "VG2MHX2A_T": {
+      "path": [
+        "\\Data\\Blocks\\MHX2\\Input\\VALUE\\VG2MHX2A"
+      ],
+      "type": "double",
+      "default": -17.0,
+      "description": "Desired value for the specification.",
+      "units": null
+    },
+    "VG2MHX2A_P": {
+      "path": [
+        "\\Data\\Blocks\\MHX2\\Input\\PRES\\VG2MHX2A"
+      ],
+      "type": "double",
+      "default": -0.1,
+      "description": "Absolute units: If value > 0 - Outlet pressure; if value <= 0 - Pressure drop.\nGauge units: Value is outlet pressure.",
+      "units": "psia"
+    },
+    "VG2MHX2A_Tolerance": {
+      "path": [
+        "\\Data\\Blocks\\MHX2\\Input\\HTOL\\VG2MHX2A"
+      ],
+      "type": "double",
+      "default": 0.0001,
+      "description": "Flash convergence tolerance.",
+      "units": null
+    },
+    "PURCO2A2_P": {
+      "path": [
+        "\\Data\\Blocks\\MHX2\\Input\\PRES\\PURCO2A2"
+      ],
+      "type": "double",
+      "default": -0.1,
+      "description": "Absolute units: If value > 0 - Outlet pressure; if value <= 0 - Pressure drop.\nGauge units: Value is outlet pressure.",
+      "units": "psia"
+    },
+    "PURCO2A2_Tolerance": {
+      "path": [
+        "\\Data\\Blocks\\MHX2\\Input\\HTOL\\PURCO2A2"
+      ],
+      "type": "double",
+      "default": 0.0001,
+      "description": "Flash convergence tolerance.",
+      "units": null
+    }
+  },
+  "outputs": {
+    "DRYCOAL_FR": {
+      "path": [
+        "\\Data\\Streams\\DRYCOAL\\Output\\STRM_UPP\\MASSFLOW\\$TOTAL\\TOTAL\\RAWCOAL"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "Fuel coal feed rate",
+      "units": "lb/hr"
+    },
+    "O2-COMB_O2_FR": {
+      "path": [
+        "\\Data\\Streams\\O2-COMB\\Output\\STR_MAIN\\MASSFLOW\\MIXED\\O2"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "O2 flow rate in oxidizer",
+      "units": "lb/hr"
+    },
+    "O2-COMB_N2_FR": {
+      "path": [
+        "\\Data\\Streams\\O2-COMB\\Output\\STR_MAIN\\MASSFLOW\\MIXED\\N2"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "N2 flow rate in oxidizer",
+      "units": "lb/hr"
+    },
+    "O2-COMB_Ar_FR": {
+      "path": [
+        "\\Data\\Streams\\O2-COMB\\Output\\STR_MAIN\\MASSFLOW\\MIXED\\AR"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "Ar flow rate in oxidizer",
+      "units": "lb/hr"
+    },
+    "TOCHANNL_CO2_FR": {
+      "path": [
+        "\\Data\\Streams\\TOCHANNL\\Output\\STR_MAIN\\MASSFLOW\\MIXED\\CO2"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "CO2 flow rate in exhaust recycle",
+      "units": "lb/hr"
+    },
+    "TOCHANNL_CO_FR": {
+      "path": [
+        "\\Data\\Streams\\TOCHANNL\\Output\\STR_MAIN\\MASSFLOW\\MIXED\\CO"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "CO flow rate in exhaust recycle",
+      "units": "lb/hr"
+    },
+    "TOCHANNL_O2_FR": {
+      "path": [
+        "\\Data\\Streams\\TOCHANNL\\Output\\STR_MAIN\\MASSFLOW\\MIXED\\O2"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "O2 flow rate in exhaust recycle",
+      "units": "lb/hr"
+    },
+    "TOCHANNL_Ar_FR": {
+      "path": [
+        "\\Data\\Streams\\TOCHANNL\\Output\\STR_MAIN\\MASSFLOW\\MIXED\\AR"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "Ar flow rate in exhaust recycle",
+      "units": "lb/hr"
+    },
+    "TOCHANNL_H2O_FR": {
+      "path": [
+        "\\Data\\Streams\\TOCHANNL\\Output\\STR_MAIN\\MASSFLOW\\MIXED\\H2O"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "H2O flow rate in exhaust recycle",
+      "units": "lb/hr"
+    },
+    "TOCHANNL_N2_FR": {
+      "path": [
+        "\\Data\\Streams\\TOCHANNL\\Output\\STR_MAIN\\MASSFLOW\\MIXED\\N2"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "N2 flow rate in exhaust recycle",
+      "units": "lb/hr"
+    },
+    "TOCHANNL_NO_FR": {
+      "path": [
+        "\\Data\\Streams\\TOCHANNL\\Output\\STR_MAIN\\MASSFLOW\\MIXED\\NO"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "NO flow rate in exhaust recycle",
+      "units": "lb/hr"
+    },
+    "TOCHANNL_NO2_FR": {
+      "path": [
+        "\\Data\\Streams\\TOCHANNL\\Output\\STR_MAIN\\MASSFLOW\\MIXED\\NO2"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "NO2 flow rate in exhaust recycle",
+      "units": "lb/hr"
+    },
+    "TOCHANNL_SO2_FR": {
+      "path": [
+        "\\Data\\Streams\\TOCHANNL\\Output\\STR_MAIN\\MASSFLOW\\MIXED\\SO2"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "SO2 flow rate in exhaust recycle",
+      "units": "lb/hr"
+    },
+    "TOCHANNL_SO3_FR": {
+      "path": [
+        "\\Data\\Streams\\TOCHANNL\\Output\\STR_MAIN\\MASSFLOW\\MIXED\\SO3"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "SO3 flow rate in exhaust recycle",
+      "units": "lb/hr"
+    },
+    "RECYSEED_Gypsum_FR": {
+      "path": [
+        "\\Data\\Streams\\RECYSEED\\Output\\STR_MAIN\\MASSFLOW\\MIXED\\GYPSUM"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "Gypsum flow rate in seed recycle",
+      "units": "lb/hr"
+    },
+    "RECYSEED_K2SO4_FR": {
+      "path": [
+        "\\Data\\Streams\\RECYSEED\\Output\\STR_MAIN\\MASSFLOW\\MIXED\\K2SO4"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "K2SO4 flow rate in seed recycle",
+      "units": "lb/hr"
+    },
+    "RECYSEED_K2CO3_FR": {
+      "path": [
+        "\\Data\\Streams\\RECYSEED\\Output\\STR_MAIN\\MASSFLOW\\MIXED\\K2CO3"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "K2CO3 flow rate in seed recycle",
+      "units": "lb/hr"
+    },
+    "RECYSEED_CaCO3_FR": {
+      "path": [
+        "\\Data\\Streams\\RECYSEED\\Output\\STR_MAIN\\MASSFLOW\\MIXED\\CACO3"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "CaCO3 flow rate in seed recycle",
+      "units": "lb/hr"
+    },
+    "RECYSEED_Ca(OH)2_FR": {
+      "path": [
+        "\\Data\\Streams\\RECYSEED\\Output\\STR_MAIN\\MASSFLOW\\MIXED\\CA(OH)2"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "Ca(OH)2 flow rate in seed recycle",
+      "units": "lb/hr"
+    },
+    "RECYSEED_CHKO2_FR": {
+      "path": [
+        "\\Data\\Streams\\RECYSEED\\Output\\STR_MAIN\\MASSFLOW\\MIXED\\CHKO2"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "CHKO2 flow rate in seed recycle",
+      "units": "lb/hr"
+    },
+    "RECYSEED_SiO2_FR": {
+      "path": [
+        "\\Data\\Streams\\RECYSEED\\Output\\STR_MAIN\\MASSFLOW\\MIXED\\SIO2"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "SiO2 flow rate in seed recycle",
+      "units": "lb/hr"
+    },
+    "RECYSEED_MgO_FR": {
+      "path": [
+        "\\Data\\Streams\\RECYSEED\\Output\\STR_MAIN\\MASSFLOW\\MIXED\\MGO"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "MgO flow rate in seed recycle",
+      "units": "lb/hr"
+    },
+    "RECYSEED_Al2O3_FR": {
+      "path": [
+        "\\Data\\Streams\\RECYSEED\\Output\\STR_MAIN\\MASSFLOW\\MIXED\\AL2O3"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "Al2O3 flow rate in seed recycle",
+      "units": "lb/hr"
+    },
+    "RECYSEED_MgAl2O4_FR": {
+      "path": [
+        "\\Data\\Streams\\RECYSEED\\Output\\STR_MAIN\\MASSFLOW\\MIXED\\MGAL2O4"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "MgAl2O4 flow rate in seed recycle",
+      "units": "lb/hr"
+    },
+    "RECYSEED_Fe2O3_FR": {
+      "path": [
+        "\\Data\\Streams\\RECYSEED\\Output\\STR_MAIN\\MASSFLOW\\MIXED\\FE2O3"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "Fe2O3 flow rate in seed recycle",
+      "units": "lb/hr"
+    },
+    "RECYSEED_CaSO4_FR": {
+      "path": [
+        "\\Data\\Streams\\RECYSEED\\Output\\STR_MAIN\\MASSFLOW\\MIXED\\CASO4"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "CaSO4 flow rate in seed recycle",
+      "units": "lb/hr"
+    },
+    "RECYSEED_K2Si2O5_FR": {
+      "path": [
+        "\\Data\\Streams\\RECYSEED\\Output\\STR_MAIN\\MASSFLOW\\MIXED\\K2SI2O5"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "K2Si2O5 flow rate in seed recycle",
+      "units": "lb/hr"
+    },
+    "RECYSEED_K2SiO3_FR": {
+      "path": [
+        "\\Data\\Streams\\RECYSEED\\Output\\STR_MAIN\\MASSFLOW\\MIXED\\K2SIO3"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "K2SiO3 flow rate in seed recycle",
+      "units": "lb/hr"
+    },
+    "RECYSEED_H2O_FR": {
+      "path": [
+        "\\Data\\Streams\\RECYSEED\\Output\\STR_MAIN\\MASSFLOW\\MIXED\\H2O"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "H2O flow rate in seed recycle",
+      "units": "lb/hr"
+    },
+    "SEEDFED_CHKO2_FR": {
+      "path": [
+        "\\Data\\Streams\\SEEDFED\\Output\\STR_MAIN\\MASSFLOW\\MIXED\\CHKO2"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "CHKO2 flow rate in seed feed",
+      "units": "lb/hr"
+    },
+    "SEEDFED_K2CO3_FR": {
+      "path": [
+        "\\Data\\Streams\\SEEDFED\\Output\\STR_MAIN\\MASSFLOW\\MIXED\\K2CO3"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "K2CO3 flow rate in seed feed",
+      "units": "lb/hr"
+    },
+    "SEEDFED_H2O_FR": {
+      "path": [
+        "\\Data\\Streams\\SEEDFED\\Output\\STR_MAIN\\MASSFLOW\\MIXED\\H2O"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "H2O flow rate in seed feed",
+      "units": "lb/hr"
+    },
+    "TOTRANSP_CO2_FR": {
+      "path": [
+        "\\Data\\Streams\\TOTRANSP\\Output\\STR_MAIN\\MASSFLOW\\MIXED\\CO2"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "CO2 flow rate in coal transport gas",
+      "units": "lb/hr"
+    },
+    "TOTRANSP_CO_FR": {
+      "path": [
+        "\\Data\\Streams\\TOTRANSP\\Output\\STR_MAIN\\MASSFLOW\\MIXED\\CO"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "CO flow rate in coal transport gas",
+      "units": "lb/hr"
+    },
+    "TOTRANSP_O2_FR": {
+      "path": [
+        "\\Data\\Streams\\TOTRANSP\\Output\\STR_MAIN\\MASSFLOW\\MIXED\\O2"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "O2 flow rate in coal transport gas",
+      "units": "lb/hr"
+    },
+    "TOTRANSP_Ar_FR": {
+      "path": [
+        "\\Data\\Streams\\TOTRANSP\\Output\\STR_MAIN\\MASSFLOW\\MIXED\\AR"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "Ar flow rate in coal transport gas",
+      "units": "lb/hr"
+    },
+    "TOTRANSP_H2O_FR": {
+      "path": [
+        "\\Data\\Streams\\TOTRANSP\\Output\\STR_MAIN\\MASSFLOW\\MIXED\\H2O"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "H2O flow rate in coal transport gas",
+      "units": "lb/hr"
+    },
+    "TOTRANSP_N2_FR": {
+      "path": [
+        "\\Data\\Streams\\TOTRANSP\\Output\\STR_MAIN\\MASSFLOW\\MIXED\\N2"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "N2 flow rate in coal transport gas",
+      "units": "lb/hr"
+    },
+    "TOTRANSP_NO_FR": {
+      "path": [
+        "\\Data\\Streams\\TOTRANSP\\Output\\STR_MAIN\\MASSFLOW\\MIXED\\NO"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "NO flow rate in coal transport gas",
+      "units": "lb/hr"
+    },
+    "TOTRANSP_NO2_FR": {
+      "path": [
+        "\\Data\\Streams\\TOTRANSP\\Output\\STR_MAIN\\MASSFLOW\\MIXED\\NO2"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "NO2 flow rate in coal transport gas",
+      "units": "lb/hr"
+    },
+    "TOTRANSP_SO2_FR": {
+      "path": [
+        "\\Data\\Streams\\TOTRANSP\\Output\\STR_MAIN\\MASSFLOW\\MIXED\\SO2"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "SO2 flow rate in coal transport gas",
+      "units": "lb/hr"
+    },
+    "TOTRANSP_SO3_FR": {
+      "path": [
+        "\\Data\\Streams\\TOTRANSP\\Output\\STR_MAIN\\MASSFLOW\\MIXED\\SO3"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "SO3 flow rate in coal transport gas",
+      "units": "lb/hr"
+    },
+    "LP-NGF_CH4_FR": {
+      "path": [
+        "\\Data\\Streams\\LP-NGF\\Output\\STR_MAIN\\MASSFLOW\\MIXED\\CH4"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "CH4 flow rate in fuel gas",
+      "units": "lb/hr"
+    },
+    "LP-NGF_C2H6_FR": {
+      "path": [
+        "\\Data\\Streams\\LP-NGF\\Output\\STR_MAIN\\MASSFLOW\\MIXED\\C2H6"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "C2H6 flow rate in fuel gas",
+      "units": "lb/hr"
+    },
+    "LP-NGF_C3H8_FR": {
+      "path": [
+        "\\Data\\Streams\\LP-NGF\\Output\\STR_MAIN\\MASSFLOW\\MIXED\\C3H8"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "C3H8 flow rate in fuel gas",
+      "units": "lb/hr"
+    },
+    "LP-NGF_C4H10N_FR": {
+      "path": [
+        "\\Data\\Streams\\LP-NGF\\Output\\STR_MAIN\\MASSFLOW\\MIXED\\C4H10N"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "C4H10N flow rate in fuel gas",
+      "units": "lb/hr"
+    },
+    "LP-NGF_C4H10-01_FR": {
+      "path": [
+        "\\Data\\Streams\\LP-NGF\\Output\\STR_MAIN\\MASSFLOW\\MIXED\\C4H10-01"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "C4H10-01 flow rate in fuel gas",
+      "units": "lb/hr"
+    },
+    "LP-NGF_CO2_FR": {
+      "path": [
+        "\\Data\\Streams\\LP-NGF\\Output\\STR_MAIN\\MASSFLOW\\MIXED\\CO2"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "CO2 flow rate in fuel gas",
+      "units": "lb/hr"
+    },
+    "LP-NGF_N2_FR": {
+      "path": [
+        "\\Data\\Streams\\LP-NGF\\Output\\STR_MAIN\\MASSFLOW\\MIXED\\N2"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "N2 flow rate in fuel gas",
+      "units": "lb/hr"
+    },
+    "DRYCOAL_T": {
+      "path": [
+        "\\Data\\Streams\\DRYCOAL\\Output\\STRM_UPP\\TEMP\\$TOTAL\\TOTAL"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "Fuel coal temperature",
+      "units": "degF"
+    },
+    "O2-COMB_T": {
+      "path": [
+        "\\Data\\Streams\\O2-COMB\\Output\\STR_MAIN\\TEMP\\MIXED"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "Oxidizer temperature",
+      "units": "degF"
+    },
+    "TOTRANSP_T": {
+      "path": [
+        "\\Data\\Streams\\TOTRANSP\\Output\\STR_MAIN\\TEMP\\MIXED"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "Coal transport gas temperature",
+      "units": "degF"
+    },
+    "TOCHANNL_T": {
+      "path": [
+        "\\Data\\Streams\\TOCHANNL\\Output\\STR_MAIN\\TEMP\\MIXED"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "Exhaust recycle temperature",
+      "units": "degF"
+    },
+    "SEEDFED_T": {
+      "path": [
+        "\\Data\\Streams\\SEEDFED\\Output\\STR_MAIN\\TEMP\\MIXED"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "Seed input temperature",
+      "units": "degF"
+    },
+    "RECYSEED_T": {
+      "path": [
+        "\\Data\\Streams\\RECYSEED\\Output\\STR_MAIN\\TEMP\\MIXED"
+      ],
+      "type": "double",
+      "default": 0.0,
+      "description": "Seed recycle temperature",
+      "units": "degF"
+    }
+  }
+}
